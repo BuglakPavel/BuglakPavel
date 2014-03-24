@@ -1,0 +1,4 @@
+1. Buglak
+2. Pavel
+3. Vasilevich
+4. (pull, etc, commit, reset ,revert, log).
