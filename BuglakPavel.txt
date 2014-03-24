@@ -1,3 +1,0 @@
-1. Buglak
-2. Pavel
-3. (pull, etc, commit, reset ,revert, log).
