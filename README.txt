@@ -1,3 +1,0 @@
-Tuvarjyieva
-Yuliya
-Main GIT stages: pull, push, commit, reset, revert, log
