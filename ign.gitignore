@@ -28,3 +28,13 @@ local.properties
 
 # TeXlipse plugin
 .texlipse
+
+#Ignore Eclipse project files
+bin/
+.classpath
+.project
+.settings/
+.metadata
+target/
+test-output/
+*.log
