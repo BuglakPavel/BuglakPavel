@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite hostname="EPBYMINW4141" name="by.buglak.tests.Test1" tests="1" failures="0" timestamp="26 Mar 2014 07:02:30 GMT" time="0.014" errors="0">
-  <testcase name="test1" time="0.007" classname="by.buglak.tests.Test1"/>
-</testsuite>
