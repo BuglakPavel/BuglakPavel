@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="37" started-at="2014-03-26T07:10:30Z" finished-at="2014-03-26T07:10:30Z">
+  <suite name="Default suite" duration-ms="31" started-at="2014-03-26T07:18:25Z" finished-at="2014-03-26T07:18:25Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="37" started-at="2014-03-26T07:10:30Z" finished-at="2014-03-26T07:10:30Z">
+    <test name="Default test" duration-ms="31" started-at="2014-03-26T07:18:25Z" finished-at="2014-03-26T07:18:25Z">
       <class name="by.buglak.tests.Test1">
-        <test-method status="PASS" signature="test1()[pri:0, instance:by.buglak.tests.Test1@dc35b98]" name="test1" duration-ms="19" started-at="2014-03-26T10:10:30Z" finished-at="2014-03-26T10:10:30Z">
+        <test-method status="PASS" signature="test1()[pri:0, instance:by.buglak.tests.Test1@14b25f37]" name="test1" duration-ms="15" started-at="2014-03-26T10:18:25Z" finished-at="2014-03-26T10:18:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test1 -->
