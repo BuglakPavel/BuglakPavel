@@ -14,7 +14,6 @@ public class Sum {
 		testng.setTestClasses(new Class[] {Test1.class});
 		testng.addListener(tla);
 		testng.run();
-
 	}
 	
 	public static int TestSum(int a,int b){
