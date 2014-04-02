@@ -1,4 +1,4 @@
-package com.midnight.workwithbrowsers;
+package com.midnight.browsers;
 
 public enum TypeBrowser {
 	
