@@ -6,16 +6,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.midnight.constants.UrlConstants;
+
 
 public class VideoClipsPage {
 
 	 public static final Logger LOGGER = Logger.getLogger(VideoClipsPage.class);
-	   private static String URL_MATCH = "http://www.cc.com/video-clips/yczqh1/-midnight--hashtagwars----ruinacartoon";
-	   
-	private WebDriver driver;
+
+     private WebDriver driver;
 
 	public VideoClipsPage(WebDriver driver) {
-		if (!driver.getCurrentUrl().contains(URL_MATCH)) {
+		if (!driver.getCurrentUrl().contains(UrlConstants.URLVIDEOPAGE)) {
 			throw new IllegalStateException(
 					"This is not the page you are expected");
 		}
@@ -26,11 +27,11 @@ public class VideoClipsPage {
 
 	}
 	    
-	    @FindBy(xpath =  ".//div[@class='air_date']/span")
+	    @FindBy(xpath =  ".//div[@class='episode']")
 	    private WebElement date;
 	 
 
-	    @FindBy(xpath =  "//div[@class='video_data']/p")
+	    @FindBy(xpath =  ".//div[@class='video_data']/p")
 
 	    private WebElement description;
 	    	    

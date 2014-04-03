@@ -6,7 +6,7 @@ import org.apache.commons.cli.Option;
 
 public class BrowserTypeOption implements ICliOption {
 	
-	 private final String DEFAULT_VALUE =  "";
+	 private static final String DEFAULT_VALUE =  "FireFox";
 
 	
 	 public String[] getDefaultValue() {

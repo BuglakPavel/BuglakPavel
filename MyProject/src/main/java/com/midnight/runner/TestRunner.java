@@ -1,14 +1,8 @@
 package com.midnight.runner;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.testng.TestListenerAdapter;
 import org.testng.TestNG;
-
-import com.midnight.exception.BrowserException;
 import com.midnight.test.BrowserTest;
-import com.midnight.exception.*;
 
 public class TestRunner {
 	
@@ -33,7 +27,7 @@ public class TestRunner {
 			testng.setTestClasses(new Class[] { BrowserTest.class });
 			testng.addListener(tla);
 			testng.run();
-			System.out.println("log - C:/vsprog/LoggingSample");
+	
 		}
 	 
 }

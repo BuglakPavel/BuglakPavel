@@ -2,8 +2,8 @@ package com.midnight.driver;
 
 import org.openqa.selenium.WebDriver;
 
+import com.midnight.browsers.TypeBrowser;
 import com.midnight.exception.BrowserException;
-import com.midnight.workwithbrowsers.TypeBrowser;
 
 public class BrowserChoice {
 
@@ -12,27 +12,24 @@ public class BrowserChoice {
 		WebDriver driver = null;
 
 		TypeBrowser request = TypeBrowser.getType(nameBrowser);
-		try {
+				
 			switch (request) {
 
 			case ChoiceFireFox:
 
-				FireFoxClass varFireFox = new FireFoxClass();
-				driver = varFireFox.CreateFireFox();
+				FireFoxClass FireFox = new FireFoxClass();
+				driver = FireFox.createFireFox();
 				return driver;
 
 			case ChoiceChrome:
 
-				ChromeClass varChrome = new ChromeClass();
-				driver = varChrome.CreateCrome();
+				ChromeClass Chrome = new ChromeClass();
+				driver = Chrome.createCrome();
 				return driver;
 
+				default: throw new BrowserException("Such browser doesn't exist!");
 			}
-		} catch (NullPointerException e) {
-			throw new BrowserException("Such browser doesn't exist!");
-		}
-
-		return driver;
+		
 
 	}
 

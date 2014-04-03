@@ -3,8 +3,6 @@ package com.midnight.driver;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
-
-
 public class InitializationBrowser {
 	
 	   private static InitializationBrowser instance;
@@ -36,7 +34,7 @@ public class InitializationBrowser {
 	    	
 	    	 if (instance != null)
 	    	 {
-	    		 driver.close();
+	    		 driver.quit();
 	    		 LOGGER.info("driver close");
 	    	 }
 	    	 
