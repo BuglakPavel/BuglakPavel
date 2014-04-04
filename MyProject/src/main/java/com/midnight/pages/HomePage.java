@@ -7,13 +7,23 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.midnight.constants.UrlConstants;
 
-public class HomePage {
 
-	private WebDriver driver;
+public class HomePage extends MainPage {
 
 	@FindBy(xpath =  "//a[@class='video_clips']")
     private WebElement goToUrlVideo;
-	 
+	
+	
+	@Override
+	public boolean checkPage() {
+		
+		if (driver.getCurrentUrl().equals(UrlConstants.URL))
+			return true;
+		else
+			return false;
+
+	}
+
 	public HomePage(WebDriver driver) {
 		if (!driver.getCurrentUrl().contains(UrlConstants.URL)) {
 			throw new IllegalStateException(
@@ -22,13 +32,13 @@ public class HomePage {
 
 		PageFactory.initElements(driver, this);
 		this.driver = driver;
-
 	}
 	
-	public WebDriver goToVideoClips()
+	public VideoClipsPage goToVideoClips()
 	{
 		goToUrlVideo.click();
-		return driver;
+		return new VideoClipsPage(driver);
 	}
 
+   
 }

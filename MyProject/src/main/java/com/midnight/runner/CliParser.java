@@ -17,7 +17,7 @@ public class CliParser {
 
 	 private static CommandLineParser cmdLineParser = new GnuParser();
 
-	 public static final Logger LOGGER = Logger.getLogger(CliParser.class);
+	 private static final Logger LOGGER = Logger.getLogger(CliParser.class);
 	 
 	 public static List<ICliOption> getCmdLineOptions() {
 	  return cmdLineOptions;
@@ -48,24 +48,21 @@ public class CliParser {
 	 }
 
 	 public static void parseCmdLine(CommandLine cmd) {
-		 System.out.println("INTO CLIPARSER");
 		
 		 LOGGER.info("------------------------------------------------------------------------");
    	  LOGGER.info(" Parsing command line: \"" + cmd.toString() + "\"");
 	  LOGGER.info("------------------------------------------------------------------------");
-		 System.out.println("------------------------------------------------------------------------");
-		 System.out.println(" Parsing command line: \"" + cmd.toString() + "\"");
-		 System.out.println("------------------------------------------------------------------------");
+
 	  for (ICliOption opt : getCmdLineOptions()) {
 	   String longName = opt.getOption().getLongOpt();
 	   LOGGER.debug(String.format("   Parsing --%s option", longName));
-	   System.out.println(String.format("   Parsing --%s option", longName));
+	
 	   if (cmd.hasOption(longName)) {
 	    String[] values = cmd.getOptionValues(longName);
 	    if (values != null && values.length != 0) {
 	     for (String value : values) {
 	      LOGGER.info(String.format("   %s=%s", longName, value));
-	    	 System.out.println(String.format("   %s=%s", longName, value));
+	 
 	     }
 	    }
 	    opt.parse(values);
@@ -73,22 +70,22 @@ public class CliParser {
 	    String[] values = opt.getDefaultValue();
 	    for (String value : values) {
 	     LOGGER.info(String.format("   %s=%s", longName, value));
-	    	System.out.println(String.format("   %s=%s", longName, value));
+	 
 	    }
 	    opt.parse(opt.getDefaultValue());
 	   }
 	  }
 	  LOGGER.info("------------------------------------------------------------------------");
-	  System.out.println("------------------------------------------------------------------------");
+
 	 }
 
 	 public static void setCmdLineParser(CommandLineParser cmdLineParser) {
-		 System.out.println("INTO CLIPARSER");
+
 	  CliParser.cmdLineParser = cmdLineParser;
 	 }
 
 	 public static CommandLineParser getCmdLineParser() {
-		 System.out.println("INTO CLIPARSER");
+
 	  return cmdLineParser;
 	 }
 	}

@@ -3,17 +3,16 @@ package com.midnight.driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import com.midnight.browsers.IChrome;
-import com.midnight.constants.DriverConstants;
-import com.midnight.constants.UrlConstants;
+import com.midnight.browsers.IBrowserDriver;
 
-public class ChromeClass implements IChrome{
+import com.midnight.constants.DriverConstants;
+
+public class ChromeClass implements IBrowserDriver{
 	
-	public WebDriver createCrome()
+	public WebDriver createBrowserDriver()
 	{
 		System.setProperty(DriverConstants.CROMEDRIVER, DriverConstants.CROMEEXE);
-		WebDriver driver = new ChromeDriver();
-		return driver;
+		return new ChromeDriver();
 	}
 	
 }

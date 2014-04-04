@@ -7,7 +7,7 @@ public class InitializationBrowser {
 	
 	   private static InitializationBrowser instance;
 	   private WebDriver driver;
-	   public static final Logger LOGGER = Logger.getLogger(InitializationBrowser.class);
+	   private static final Logger LOGGER = Logger.getLogger(InitializationBrowser.class);
 	   
 	    public static synchronized InitializationBrowser getInstance(String nameBrowser) {
 	        if (instance == null) {

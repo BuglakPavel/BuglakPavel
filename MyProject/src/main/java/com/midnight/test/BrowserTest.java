@@ -2,10 +2,8 @@ package com.midnight.test;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import com.midnight.constants.DriverConstants;
 import com.midnight.constants.UrlConstants;
 import com.midnight.driver.InitializationBrowser;
 import com.midnight.pages.HomePage;
@@ -17,39 +15,46 @@ import org.testng.Assert;
 
 public class BrowserTest {
 
-	@BeforeTest
+	private WebDriver driver;
+	private VideoClipsPage pageVideo;
+	private HomePage home;
+	
+	@BeforeClass
 	public void startBrowser() {
-
-		WebDriver driver = InitializationBrowser.getInstance(BrowserConfig.getBrowserType()).getDriver();
+		
+		driver = InitializationBrowser.getInstance(BrowserConfig.getBrowserType()).getDriver();
 		driver.get(UrlConstants.URL);
+		
 	}
 
 	@Test
 	public void checkDate() {
 
-		WebDriver driver = InitializationBrowser.getInstance(BrowserConfig.getBrowserType()).getDriver();
-		driver.get(UrlConstants.URL);
+		home = new HomePage(driver);
+		pageVideo = home.goToVideoClips();	
+		Assert.assertEquals(pageVideo.getDate(), true);
 		
-		HomePage home = new HomePage(driver);
-		driver = home.goToVideoClips();
-		
-		VideoClipsPage page = new VideoClipsPage(driver);
-		
-		Assert.assertEquals(page.getDate(), DriverConstants.DATE);
 	}
 	
 	@Test
 	public void checkTittle() {
+		
+		Assert.assertEquals(pageVideo.getTittle(), true);
+		
+	}
+	
+	@Test
+	public void checkUrlHome() {
+		
+		Assert.assertEquals(home.checkPage(), true);
 
-		WebDriver driver = InitializationBrowser.getInstance(BrowserConfig.getBrowserType()).getDriver();
-		driver.get(UrlConstants.URL);
+	}
+	
+	@Test
+	public void checkUrlPageVideo() {
+				
+		Assert.assertEquals(pageVideo.checkPage(), true);
 		
-		HomePage home = new HomePage(driver);
-		driver = home.goToVideoClips();
-		
-		VideoClipsPage page = new VideoClipsPage(driver);
-		
-		Assert.assertEquals(page.getTittle(), DriverConstants.TITTLE);
 	}
 	
 	@AfterTest

@@ -3,13 +3,13 @@ package com.midnight.driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import com.midnight.browsers.IFireFox;
+import com.midnight.browsers.IBrowserDriver;
 
-public class FireFoxClass implements IFireFox {
+public class FireFoxClass implements IBrowserDriver {
 
-	public  WebDriver createFireFox()
+	public  WebDriver createBrowserDriver()
 	{
-		WebDriver driver = new FirefoxDriver();
-		return driver;
+		return new FirefoxDriver();
+
 	}
 }

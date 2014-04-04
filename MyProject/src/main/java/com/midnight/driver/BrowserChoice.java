@@ -9,27 +9,21 @@ public class BrowserChoice {
 
 	public WebDriver factoryMethod(String nameBrowser) {
 
-		WebDriver driver = null;
-
 		TypeBrowser request = TypeBrowser.getType(nameBrowser);
 				
-			switch (request) {
+		switch (request) {
 
-			case ChoiceFireFox:
+		case ChoiceFireFox:
 
-				FireFoxClass FireFox = new FireFoxClass();
-				driver = FireFox.createFireFox();
-				return driver;
+			return new FireFoxClass().createBrowserDriver();
 
-			case ChoiceChrome:
+		case ChoiceChrome:
 
-				ChromeClass Chrome = new ChromeClass();
-				driver = Chrome.createCrome();
-				return driver;
+			return new ChromeClass().createBrowserDriver();
 
-				default: throw new BrowserException("Such browser doesn't exist!");
-			}
-		
+		default:
+			throw new BrowserException("Such browser doesn't exist!");
+		}
 
 	}
 
