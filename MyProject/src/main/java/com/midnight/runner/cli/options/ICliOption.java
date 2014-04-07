@@ -1,4 +1,4 @@
-package com.midnight.runner;
+package com.midnight.runner.cli.options;
 
 import org.apache.commons.cli.Option;
 

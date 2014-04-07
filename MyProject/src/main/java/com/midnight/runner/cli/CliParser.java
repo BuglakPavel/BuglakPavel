@@ -1,4 +1,4 @@
-package com.midnight.runner;
+package com.midnight.runner.cli;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +10,8 @@ import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.log4j.Logger;
+
+import com.midnight.runner.cli.options.ICliOption;
 
 public class CliParser {
 	
@@ -24,7 +26,7 @@ public class CliParser {
 	 }
 
 	 public static void parseCmdLineArgs(String[] args) {
-		 System.out.println("INTO CLIPARSER");
+	
 	  Options opts = CliParser.customOptsToCmdLineOpts();
 	  try {
 	   CommandLine cmd = CliParser.getCmdLineParser().parse(opts, args);
@@ -39,7 +41,7 @@ public class CliParser {
 	 }
 
 	 public static Options customOptsToCmdLineOpts() {
-		 System.out.println("INTO CLIPARSER");
+	
 	  Options options = new Options();
 	  for (ICliOption opt : getCmdLineOptions()) {
 	   options.addOption(opt.getOption());
@@ -49,7 +51,7 @@ public class CliParser {
 
 	 public static void parseCmdLine(CommandLine cmd) {
 		
-		 LOGGER.info("------------------------------------------------------------------------");
+	  LOGGER.info("------------------------------------------------------------------------");
    	  LOGGER.info(" Parsing command line: \"" + cmd.toString() + "\"");
 	  LOGGER.info("------------------------------------------------------------------------");
 

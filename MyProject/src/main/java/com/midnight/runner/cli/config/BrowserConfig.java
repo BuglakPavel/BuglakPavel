@@ -1,4 +1,4 @@
-package com.midnight.runner;
+package com.midnight.runner.cli.config;
 
 public class BrowserConfig {
 

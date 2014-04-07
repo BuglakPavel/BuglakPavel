@@ -1,4 +1,4 @@
-<suite name="Suite1" verbose="1" >
+<suite name="TestSuite" verbose="1" >
   <test name="BrowserTest"  >
     <packages>
       <package name="com.midnight.test" />

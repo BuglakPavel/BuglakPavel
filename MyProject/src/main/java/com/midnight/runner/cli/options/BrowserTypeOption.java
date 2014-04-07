@@ -1,7 +1,9 @@
-package com.midnight.runner;
+package com.midnight.runner.cli.options;
 
 
 import org.apache.commons.cli.Option;
+
+import com.midnight.runner.cli.config.BrowserConfig;
 
 
 public class BrowserTypeOption implements ICliOption {

@@ -4,11 +4,12 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
 import com.midnight.constants.UrlConstants;
 import com.midnight.driver.InitializationBrowser;
 import com.midnight.pages.HomePage;
 import com.midnight.pages.VideoClipsPage;
-import com.midnight.runner.BrowserConfig;
+import com.midnight.runner.cli.config.BrowserConfig;
 
 import org.testng.Assert;
 
@@ -23,7 +24,7 @@ public class BrowserTest {
 	public void startBrowser() {
 		
 		driver = InitializationBrowser.getInstance(BrowserConfig.getBrowserType()).getDriver();
-		driver.get(UrlConstants.URL);
+		driver.get(UrlConstants.URLHOMEPAGE);
 		
 	}
 
@@ -32,30 +33,15 @@ public class BrowserTest {
 
 		home = new HomePage(driver);
 		pageVideo = home.goToVideoClips();	
-		Assert.assertEquals(pageVideo.getDate(), true);
-		
+		Assert.assertTrue(pageVideo.getDate());
 	}
 	
 	@Test
 	public void checkTittle() {
 		
-		Assert.assertEquals(pageVideo.getTittle(), true);
-		
+		Assert.assertTrue(pageVideo.getTittle());
 	}
 	
-	@Test
-	public void checkUrlHome() {
-		
-		Assert.assertEquals(home.checkPage(), true);
-
-	}
-	
-	@Test
-	public void checkUrlPageVideo() {
-				
-		Assert.assertEquals(pageVideo.checkPage(), true);
-		
-	}
 	
 	@AfterTest
 	public void closeBrowser() {
