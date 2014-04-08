@@ -1,5 +1,7 @@
 package com.midnight.pages;
 
+import java.util.jar.Attributes.Name;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
@@ -42,8 +44,10 @@ public class HomePage extends MainPage {
 		LOGGER.info(driver.getCurrentUrl());
 	}
 	
+	
 	public VideoClipsPage goToVideoClips()
 	{
+		
 		goToUrlVideo.click();
 		return new VideoClipsPage(driver);
 	}
