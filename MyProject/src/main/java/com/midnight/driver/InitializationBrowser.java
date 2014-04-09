@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class InitializationBrowser {
 	
 	   private static InitializationBrowser instance;
-	   private WebDriver driver;
+	   private static WebDriver driver;
 	   private static final Logger LOGGER = Logger.getLogger(InitializationBrowser.class);
 	   
 	    public static synchronized InitializationBrowser getInstance(String nameBrowser) {
@@ -30,7 +30,7 @@ public class InitializationBrowser {
 	    	return driver;
 	    }
 	    
-	    public void removeDriver() {
+	    public static void removeDriver() {
 	    	
 	    	 if (instance != null)
 	    	 {

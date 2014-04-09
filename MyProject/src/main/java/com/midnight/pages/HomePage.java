@@ -1,5 +1,6 @@
 package com.midnight.pages;
 
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
@@ -38,12 +39,15 @@ public class HomePage extends MainPage {
 			throw new HomePageLoadingException("Error with loading HomePage!");
 		}
 		
+		LOGGER.info("Test:");
 		LOGGER.info("Current url :");
-		LOGGER.info(driver.getCurrentUrl());
+		
 	}
+	
 	
 	public VideoClipsPage goToVideoClips()
 	{
+		
 		goToUrlVideo.click();
 		return new VideoClipsPage(driver);
 	}
