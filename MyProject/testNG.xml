@@ -1,5 +1,5 @@
 <suite name="TestSuite" verbose="1" >
-  <test name="BrowserTest"  >
+  <test name="BrowserTest">
     <packages>
       <package name="com.midnight.test" />
    </packages>

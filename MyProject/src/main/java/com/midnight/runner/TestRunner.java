@@ -48,7 +48,6 @@ public class TestRunner {
 					e.printStackTrace();
 				}
 			    testNG.setXmlSuites(suites);
-			    testNG.run();
-			    
+			    testNG.run();		    
 		}
 }
