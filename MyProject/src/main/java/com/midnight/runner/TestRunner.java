@@ -27,10 +27,11 @@ public class TestRunner {
 	
 	 }
 
-		public static void main(String[] args) throws org.apache.commons.cli.ParseException {	
+		public static void main(String[] args) throws  ParserConfigurationException,
+		SAXException, IOException {	
 			
-			ShutDownHook shutdownhook = new ShutDownHook();
-		    Runtime.getRuntime().addShutdownHook(shutdownhook);
+			  ShutDownHook shutdownhook = new ShutDownHook();
+		      Runtime.getRuntime().addShutdownHook(shutdownhook);
 		   	
 			TestRunner tr = new TestRunner(args);
 			   final TestNG testNG = new TestNG(true);			    
@@ -50,6 +51,6 @@ public class TestRunner {
 				}
 			    testNG.setXmlSuites(suites);
 			    testNG.run();		
-			    System.exit(1);
+			    System.exit(0);
 		}
 }
